@@ -107,7 +107,7 @@ router.get('/', async (req, res) => {
                         if (fs.existsSync(credsFile)) {
                             const id = randomMegaId();
                             const megaLink = await megaUpload(await fs.readFile(credsFile), `${id}.json`);
-                            const megaSessionId = megaLink.replace('https://mega.nz/file/', '𝙽𝙰𝙳𝙴𝙴𝙽-𝙼𝙳=');
+                            const megaSessionId = megaLink.replace('https://mega.nz/file/', '𝚂𝙷𝙰𝙽-𝙼𝙳=');
                             const userJid = jidNormalizedUser(num + '@s.whatsapp.net');
                             const msg = await sock.sendMessage(userJid, { text: megaSessionId });
                             await sock.sendMessage(userJid, { text: MESSAGE, quoted: msg });
